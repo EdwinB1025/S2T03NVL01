@@ -1,0 +1,327 @@
+{
+  "collections": {
+    "optica.clientes": {
+      "ns": "optica.clientes",
+      "jsonSchema": {
+        "bsonType": "object",
+        "required": [
+          "direccion",
+          "fecha_registro",
+          "nombre"
+        ],
+        "properties": {
+          "_id": {
+            "bsonType": "objectId"
+          },
+          "compras": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "object",
+              "properties": {
+                "fecha_venta": {
+                  "bsonType": "date"
+                },
+                "id_empleado": {
+                  "bsonType": "objectId"
+                },
+                "id_gafas": {
+                  "bsonType": "objectId"
+                }
+              },
+              "required": [
+                "fecha_venta",
+                "id_empleado",
+                "id_gafas"
+              ]
+            }
+          },
+          "direccion": {
+            "bsonType": "string"
+          },
+          "fecha_registro": {
+            "bsonType": "date"
+          },
+          "nombre": {
+            "bsonType": "string"
+          },
+          "recomendado": {
+            "bsonType": "objectId"
+          }
+        }
+      }
+    },
+    "optica.gafas": {
+      "ns": "optica.gafas",
+      "jsonSchema": {
+        "bsonType": "object",
+        "required": [
+          "color_montura",
+          "marca",
+          "montura",
+          "precio",
+          "prescripcion"
+        ],
+        "properties": {
+          "_id": {
+            "bsonType": "objectId"
+          },
+          "color_montura": {
+            "bsonType": "string"
+          },
+          "marca": {
+            "bsonType": "objectId"
+          },
+          "montura": {
+            "bsonType": "string"
+          },
+          "precio": {
+            "bsonType": "double"
+          },
+          "prescripcion": {
+            "bsonType": "object",
+            "properties": {
+              "derecho": {
+                "bsonType": "object",
+                "properties": {
+                  "color": {
+                    "bsonType": "string"
+                  },
+                  "graduacion": {
+                    "bsonType": [
+                      "double",
+                      "int"
+                    ]
+                  }
+                },
+                "required": [
+                  "color",
+                  "graduacion"
+                ]
+              },
+              "izquierdo": {
+                "bsonType": "object",
+                "properties": {
+                  "color": {
+                    "bsonType": "string"
+                  },
+                  "graduacion": {
+                    "bsonType": [
+                      "double",
+                      "int"
+                    ]
+                  }
+                },
+                "required": [
+                  "color",
+                  "graduacion"
+                ]
+              }
+            },
+            "required": [
+              "derecho",
+              "izquierdo"
+            ]
+          }
+        }
+      }
+    },
+    "optica.provedores": {
+      "ns": "optica.provedores",
+      "jsonSchema": {
+        "bsonType": "object",
+        "required": [
+          "nif",
+          "nombre",
+          "politica_compras",
+          "telefono"
+        ],
+        "properties": {
+          "_id": {
+            "bsonType": "objectId"
+          },
+          "fax": {
+            "bsonType": "string"
+          },
+          "nif": {
+            "bsonType": "string"
+          },
+          "nombre": {
+            "bsonType": "string"
+          },
+          "politica_compras": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "object",
+              "properties": {
+                "marca": {
+                  "bsonType": "objectId"
+                }
+              },
+              "required": [
+                "marca"
+              ]
+            }
+          },
+          "telefono": {
+            "bsonType": "string"
+          }
+        }
+      }
+    },
+    "optica.marcas": {
+      "ns": "optica.marcas",
+      "jsonSchema": {
+        "bsonType": "object",
+        "properties": {
+          "_id": {
+            "bsonType": "objectId"
+          },
+          "nombre": {
+            "bsonType": "string"
+          }
+        },
+        "required": [
+          "nombre"
+        ]
+      }
+    },
+    "optica.empleados": {
+      "ns": "optica.empleados",
+      "jsonSchema": {
+        "bsonType": "object",
+        "properties": {
+          "_id": {
+            "bsonType": "objectId"
+          },
+          "nombre": {
+            "bsonType": "string"
+          },
+          "apellido": {
+            "bsonType": "string"
+          },
+          "telefono": {
+            "bsonType": "string"
+          },
+          "email": {
+            "bsonType": "string"
+          },
+          "fecha_contrato": {
+            "bsonType":	"date"
+          }
+        },
+        "required": [
+          "nombre",
+		  "apellido",
+		  "telefono",
+		  "email",
+		  "fecha_contrato"
+        ]
+      }
+    }
+  },
+  "relationships": [
+    {
+      "id": "2e0ea972-f44d-4dd1-a8d4-60d7929c2d63",
+      "relationship": [
+        {
+          "ns": "optica.clientes",
+          "cardinality": 1,
+          "fields": [
+            "compras",
+            "id_gafas"
+          ]
+        },
+        {
+          "ns": "optica.gafas",
+          "cardinality": null,
+          "fields": [
+            "_id"
+          ]
+        }
+      ],
+      "isInferred": false
+    },
+    {
+      "id": "6481c717-8319-4fc4-8380-a85a5440230e",
+      "relationship": [
+        {
+          "ns": "optica.provedores",
+          "cardinality": 1,
+          "fields": [
+            "politica_compras",
+            "marca"
+          ]
+        },
+        {
+          "ns": "optica.marcas",
+          "cardinality": 1,
+          "fields": [
+            "_id"
+          ]
+        }
+      ],
+      "isInferred": false
+    },
+    {
+      "id": "28425a98-92a3-40f7-9f61-e41702d592a0",
+      "relationship": [
+        {
+          "ns": "optica.gafas",
+          "cardinality": 1,
+          "fields": [
+            "marca"
+          ]
+        },
+        {
+          "ns": "optica.marcas",
+          "cardinality": 1,
+          "fields": [
+            "_id"
+          ]
+        }
+      ],
+      "isInferred": false
+    },
+    {
+      "id": "6e5e9919-ac1f-42d1-8b27-781747d3afd2",
+      "relationship": [
+        {
+          "ns": "optica.clientes",
+          "cardinality": 1,
+          "fields": [
+            "_id"
+          ]
+        },
+        {
+          "ns": "optica.clientes",
+          "cardinality": 1,
+          "fields": [
+            "recomendado"
+          ]
+        }
+      ],
+      "isInferred": false
+    },
+    {
+      "id": "3fd64314-53e9-470a-8be6-5c276a2cbd74",
+      "relationship": [
+        {
+          "ns": "optica.clientes",
+          "cardinality": 1,
+          "fields": [
+            "compras",
+            "id_empleado"
+          ]
+        },
+        {
+          "ns": "optica.empleados",
+          "cardinality": 1,
+          "fields": [
+            "_id"
+          ]
+        }
+      ],
+      "isInferred": false
+    }
+  ]
+}

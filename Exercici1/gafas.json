@@ -1,0 +1,35 @@
+[
+  {
+    "_id": { "$oid": "ccc000000000000000000001" },
+    "marca": { "$oid": "aaa000000000000000000001" },
+    "montura": "pasta",
+    "color_montura": "negro",
+    "precio": 149.99,
+    "prescripcion": {
+      "derecho": { "graduacion": 1.5, "color": "transparente" },
+      "izquierdo": { "graduacion": 2.0, "color": "transparente" }
+    }
+  },
+  {
+    "_id": { "$oid": "ccc000000000000000000002" },
+    "marca": { "$oid": "aaa000000000000000000002" },
+    "montura": "metalica",
+    "color_montura": "plateado",
+    "precio": 199.99,
+    "prescripcion": {
+      "derecho": { "graduacion": -0.75, "color": "azul" },
+      "izquierdo": { "graduacion": -1.25, "color": "azul" }
+    }
+  },
+  {
+    "_id": { "$oid": "ccc000000000000000000003" },
+    "marca": { "$oid": "aaa000000000000000000003" },
+    "montura": "flotante",
+    "color_montura": "dorado",
+    "precio": 249.99,
+    "prescripcion": {
+      "derecho": { "graduacion": 0.5, "color": "gris" },
+      "izquierdo": { "graduacion": 0.75, "color": "gris" }
+    }
+  }
+]

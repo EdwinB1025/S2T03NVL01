@@ -1,0 +1,15 @@
+[
+  {
+    "_id": { "$oid": "eee000000000000000000001" },
+    "nombre": "María García",
+    "direccion": "Carrer de Mallorca 123, Barcelona",
+    "fecha_registro": { "$date": "2023-03-15T00:00:00.000Z" }
+  },
+  {
+    "_id": { "$oid": "eee000000000000000000002" },
+    "nombre": "Joan Puig",
+    "direccion": "Avinguda Diagonal 456, Barcelona",
+    "fecha_registro": { "$date": "2023-06-20T00:00:00.000Z" },
+    "recomendado": { "$oid": "eee000000000000000000001" }
+  }
+]

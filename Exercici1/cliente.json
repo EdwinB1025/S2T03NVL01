@@ -1,0 +1,34 @@
+[
+  {
+    "_id": { "$oid": "eee000000000000000000001" },
+    "nombre": "María García",
+    "direccion": "Carrer de Mallorca 123, Barcelona",
+    "fecha_registro": { "$date": "2023-03-15T00:00:00.000Z" },
+    "compras": [
+      {
+        "id_gafas": { "$oid": "ccc000000000000000000001" },
+        "id_empleado": { "$oid": "ddd000000000000000000001" },
+        "fecha_venta": { "$date": "2023-04-10T00:00:00.000Z" }
+      }
+    ]
+  },
+  {
+    "_id": { "$oid": "eee000000000000000000002" },
+    "nombre": "Joan Puig",
+    "direccion": "Avinguda Diagonal 456, Barcelona",
+    "fecha_registro": { "$date": "2023-06-20T00:00:00.000Z" },
+    "recomendado": { "$oid": "eee000000000000000000001" },
+    "compras": [
+      {
+        "id_gafas": { "$oid": "ccc000000000000000000002" },
+        "id_empleado": { "$oid": "ddd000000000000000000002" },
+        "fecha_venta": { "$date": "2023-07-05T00:00:00.000Z" }
+      },
+      {
+        "id_gafas": { "$oid": "ccc000000000000000000003" },
+        "id_empleado": { "$oid": "ddd000000000000000000001" },
+        "fecha_venta": { "$date": "2024-01-18T00:00:00.000Z" }
+      }
+    ]
+  }
+]

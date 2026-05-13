@@ -1,0 +1,5 @@
+[
+  { "_id": { "$oid": "aaa000000000000000000001" }, "nombre": "Ray-Ban" },
+  { "_id": { "$oid": "aaa000000000000000000002" }, "nombre": "Oakley" },
+  { "_id": { "$oid": "aaa000000000000000000003" }, "nombre": "Silhouette" }
+]

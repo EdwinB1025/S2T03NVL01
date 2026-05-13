@@ -1,0 +1,22 @@
+[
+  {
+    "_id": { "$oid": "bbb000000000000000000001" },
+    "nombre": "Distribuciones Ópticas S.L.",
+    "telefono": "934567890",
+    "fax": "934567891",
+    "nif": "B12345678",
+    "politica_compras": [
+      { "marca": { "$oid": "aaa000000000000000000001" } },
+      { "marca": { "$oid": "aaa000000000000000000002" } }
+    ]
+  },
+  {
+    "_id": { "$oid": "bbb000000000000000000002" },
+    "nombre": "Óptica Global S.A.",
+    "telefono": "931234567",
+    "nif": "A87654321",
+    "politica_compras": [
+      { "marca": { "$oid": "aaa000000000000000000003" } }
+    ]
+  }
+]
